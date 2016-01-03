@@ -3,7 +3,6 @@ title: React 的 context 和 childContext
 date: 2015-12-31 17:17:50
 tags: 
 - 前端
-- 翻译
 categories: 
 - 前端 
 - React
