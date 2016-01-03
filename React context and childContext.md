@@ -1,3 +1,20 @@
+layout: [post]
+title: React 的 context 和 childContext
+date: 2015-12-31 17:17:50
+tags: 
+- 前端
+categories: 
+- 前端 
+- React
+---
+
+介绍如何使用 React 的 context 
+
+<!-- more -->
+
+
+---
+
 [原文地址](http://javascript.tutorialhorizon.com/2015/06/06/using-context-and-childcontext-in-react/)
 
 # Using context and childContext in React
