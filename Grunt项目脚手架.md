@@ -89,32 +89,32 @@ git clone https://github.com/gruntjs/grunt-init-jquery.git ~/.grunt-init/jquery
 
 在 `template.js` 文件主要用到 `init-filesToCopy` 和 `init.copyAndProcess` 方法，在运行 `grunt-init template` 时 `root/` 子目录的所在文件都会复制到当前目录，。
 
-注意所有被复制的文件都会根据 `props` 数据对象处理文件内设置的 `{%  %}`，除非设置了 `noProcess` 选项。见 [jquery template](https://github.com/gruntjs/grunt-init-jquery) 的做法。
+注意所有被复制的文件都会根据 `props` 数据对象处理文件内设置的 `{ %  % }`，除非设置了 `noProcess` 选项。见 [jquery template](https://github.com/gruntjs/grunt-init-jquery) 的做法。
 
 例如文件顶部的版权声明：
 
 ```javascript
 
 /*
- * {%= name %}
- * {%= homepage %}
+ * { %= name % } 
+ * { %= homepage % }
  *
- * Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}
- * Licensed under the {%= licenses.join(', ') %} license{%= licenses.length === 1 ? '' : 's' %}.
+ * Copyright (c) { %= grunt.template.today('yyyy') % } { %= author_name % }
+ * Licensed under the { %= licenses.join(', ') % } license{ %= licenses.length === 1 ? '' : 's' %} .
  */
 
 ```
 
 ## 重命名或排除模版文件
 
-在 `rename.json` 描述了文件从 `sourcepath` 复制到 `destpath` 的重命名规则。`sourcepath` 必须是相对于 `root/` 文件夹的路径，但 `destpath` 值可以包含 `{% %}` 描述目标路径。
+在 `rename.json` 描述了文件从 `sourcepath` 复制到 `destpath` 的重命名规则。`sourcepath` 必须是相对于 `root/` 文件夹的路径，但 `destpath` 值可以包含 `{ % % }` 描述目标路径。
 
 如果对 `destpath` 指定为 `false` 文件将不会被复制。同时，`srcpath` 支持通配符表达式。
 
 
 # 指定默认提示回答
 
-初始提示可以是硬编码字符或由当前环境决定的默认值。如果你想覆盖特定的默认值，OS X 中你可以修改 `~/.grunt-init/defaults.json` 文件，Windows 中修改 `%USERPROFILE%\.grunt-init\defaults.json` 文件。
+初始提示可以是硬编码字符或由当前环境决定的默认值。如果你想覆盖特定的默认值，OS X 中你可以修改 `~/.grunt-init/defaults.json` 文件，Windows 中修改 `% USERPROFILE %\.grunt-init\defaults.json` 文件。
 
 例如，我的 `default.json` 文件是这样的，因为我想使用与默认名称稍微不同的名称，并且想排除 Email 地址，和自动指定作者 url：
 
