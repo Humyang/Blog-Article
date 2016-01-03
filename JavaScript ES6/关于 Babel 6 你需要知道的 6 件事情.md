@@ -1,3 +1,21 @@
+
+layout: [post]
+title: 关于 Babel 6 你需要知道的 6 件事情
+date: 2016-01-03 22:29:18
+tags: 
+- 前端
+categories: 
+- 前端
+- 工具
+---
+
+快速了解 Babel 6 和 Babel 5 之间的区别。
+
+<!-- more -->
+
+
+---
+
 [原文地址](http://jamesknelson.com/the-six-things-you-need-to-know-about-babel-6/)
 
 # 关于 Babel 6 你需要知道的 6 件事情
