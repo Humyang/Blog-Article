@@ -1,3 +1,19 @@
+layout: [post]
+title: Webpack 入门
+date: 2016-01-03 22:32:03
+tags: 
+- 前端
+categories: 
+- 前端
+- 工具
+---
+
+跟着官网入门文章过了一遍。
+
+<!-- more -->
+
+
+---
 Webpack 官网入门
 
 [地址](http://webpack.github.io/docs/motivation.html)
@@ -47,7 +63,7 @@ Module 导出一个接口到全局对象，即 `window` 对象。Modules 可以�
 * 需要由开发者解决 modules/libraries 之间的依赖
 * 在大型项目中列表过长导致难以管理
 
-### CommonJS:同步 `require`
+### CommonJS:同步的 `require`
 
 这种方式使用同步的 `require` 方法加载依赖和返回一个 exported interface。module 可以通过添加一个属性到 `exports` 对象进行指定 exports，或者设置 `module.exports` 的值。
 
@@ -197,11 +213,11 @@ require("./template.jade");
 require("./image.png");
 ```
 
-## STATIC ANALYSIS
+## 静态分析
 
 当编译所有 module 时会尝试进行静态分析找到所有依赖。
 
-传统方式只能简单的查找不能通过表达式，但 `require("./template/" + templateName + ".jade")` 也是一种常用的构造方式却不支持。
+传统方式只能简单的查找，不能通过表达式匹配，并且 `require("./template/" + templateName + ".jade")` 也是一种常用的构造方式却不支持。
 
 许多链接库的依赖写法风格都不一样，有的写法相当怪异。
 
@@ -229,12 +245,11 @@ require("./image.png");
 
 ### Code Splitting
 
-webpack 在依赖关系树中有两种类型的依赖：同步和异步。异步依赖意作为分割点将资源分割成不同 chunk，之后 chunk tree 会优化，文件会被每个关联的 chunk 触发。
+webpack 在依赖关系树中有两种类型的依赖：同步和异步。异步依赖意根据分割点将资源分割成不同 chunk，之后 chunk tree 会优化，文件会被每个关联的 chunk 触发。
 
 ### Loaders
 
-webpack 只能处理本地的 JavaScript，但 Loader 可以被用做转换其它资源到 JavaScript，因此所有资源都可以当作模块加载。
-
+webpack 只能处理本地的 JavaScript，但使用 Loader 可以转换其它资源到 JavaScript 中，因此所有资源都可以当作模块加载。
 
 ### 智能解析
 
@@ -249,24 +264,24 @@ webpack 拥有丰富的插件系统。大部分内置的功能都依赖于插件
 
 ## 什么是 Loader？
 
-Loader 可以对应用在应用程序的资源进行转换。它们是一个 function (运行在 Node.js),把资源文件的来源作为参数传递给该 function 然后返回一个新的来源。
+Loader 可以对应用程序需要的资源进行转换。它们是一个 function (运行在 Node.js),把资源文件的来源作为参数传递给该 function ，然后返回一个新的来源。
 
 例如，你可以使用 loader 告诉 webpack 如何加载 CoffeeScript 或 JSX。
 
 
 ### Loader 的功能
 
-* Loader 可以链式使用。它们以管道的形式对资源应用。最后的 Loader 预期会返回 JavaScript，其它的可以返回任意格式 (将会传递给下一个 Loader)。
+* Loader 可以链式使用，它们以管道的形式对处理资源。最后的 Loader 会返回 JavaScript，其它的 Loader 可以返回任意格式 (将会传递给下一个 Loader)。
 * Loader 可以是同步或异步的。
-* Loader 运行在 node.js 并且能做这里能做的任意事情。
-* Loader 接受查询参数。这样可以被用做传递配置信息给 loader。
+* Loader 是运行在 node.js 所有能做的 node.js 能做的所有事情。
+* Loader 接受查询参数。可以通过参数传递配置信息给 loader。
 * 可以在配置文件通过 extension/RegExps 绑定 Loader。
 * Loader 可以通过 `npm` 发布和安装。
-* 正常的 module 出了 export `main` 之外还可以额外的 export loader，通过在 `package.json` 的 `loader` 配置。
+* 正常的 module 除了 export `main` 之外还可以额外的 export loader，通过在 `package.json` 对 `loader` 配置。
 * Loader 可以访问配置文件。
-* Plguin 可以给定 loader 更多功能。
+* Plguin 可以给 loader 更多功能。
 * Loader 可以触发任意额外的文件。
-* [等等](http://webpack.github.io/docs/loaders.html)
+* [其它](http://webpack.github.io/docs/loaders.html)
 
 
 ## 解析 Loader
