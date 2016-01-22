@@ -1,3 +1,20 @@
+layout: [post]
+title: 文章标题
+date: 2016-01-21 15:59:39
+tags:
+- 标签
+categories:
+- 分类
+- 子分类
+---
+
+文章简介
+
+<!-- more -->
+
+
+---
+
 Basic Visual Formatting (三)
 
 # Block-Level Elements
