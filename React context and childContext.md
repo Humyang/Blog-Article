@@ -1,14 +1,14 @@
 layout: [post]
 title: React 的 context 和 childContext
 date: 2015-12-31 17:17:50
-tags: 
+tags:
 - 前端
-categories: 
-- 前端 
+categories:
+- 前端
 - React
 ---
 
-介绍如何使用 React 的 context 
+介绍如何使用 React 的 context
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ categories:
 
 > React has some­thing called as Child contexts that allows a par­ent ele­ment to spec­ify a con­text — aka a set of prop­er­ties — which can be accessed from all of its chil­dren and grand­chil­dren via the this.context object.
 
-React 有一些叫做 Child context 的东西，允许父元素指定一个 context - 等于设置一个属性 － 它可以通过 `this.context` 对象访问它所有的 children 和 grandchildren。
+React 有一些叫做 Child context 的东西，允许父元素指定一个 context - 等于设置一个属性 － 它的所有 children 和 grandchildren 都可以通过 `this.context` 对象访问它的属性。
 
 
 > There are 2 aspects to how you would go about imple­ment­ing this in your code.
