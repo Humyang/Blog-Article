@@ -9,12 +9,13 @@ categories:
 - 布局
 ---
 
-介绍 Flexbox 的概念，和哪些属性能应用的 Container。
+介绍 Flexbox 的概念，和 Container 能应用哪些属性。 
 
 <!-- more -->
 
 
 ---
+
 # Background
 
 > The Flexbox Layout (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").
