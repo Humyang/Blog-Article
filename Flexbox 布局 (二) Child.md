@@ -1,6 +1,7 @@
 layout: [post]
 title: Flexbox 布局  (二) Container
 date: 2016-01-24 18:23:48
+id: "Flexbox2"
 tags:
 - 前端
 - 翻译
@@ -21,11 +22,11 @@ categories:
 
 # Properties for the Children (flex items)
 
-![](/images/2016/01/flex-items.svg)
+![](./flex-items.svg)
 
 ## order
 
-![](/images/2016/01/order-2.svg)
+![](./order-2.svg)
 
 > By default, flex items are laid out in the source `order`. However, the order property controls the order in which they appear in the flex container.
 
@@ -39,7 +40,7 @@ flex Item 顺序默认按照源顺序排序。而 `order` 属性可以控制他�
 
 ## flex-grow
 
-![](/images/2016/01/flex-grow.svg)
+![](./flex-grow.svg)
 
 > This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.
 
@@ -91,7 +92,7 @@ flex Item 顺序默认按照源顺序排序。而 `order` 属性可以控制他�
 
 如果设置为 `0`，环绕内容的额外空间则不会算上。如果设置为 `auto`，额外空间的分配基于他的 `flex-grow` 值。见此图：
 
-![](/images/2016/01/rel-vs-abs-flex.svg)
+![](./rel-vs-abs-flex.svg)
 
 ## flex
 
@@ -111,7 +112,7 @@ flex Item 顺序默认按照源顺序排序。而 `order` 属性可以控制他�
 
 ## align-self
 
-![](/images/2016/01/align-self.svg)
+![](./align-self.svg)
 
 > This allows the default alignment (or the one specified by `align-items`) to be overridden for individual flex items.
 
