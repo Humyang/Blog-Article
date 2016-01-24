@@ -1,6 +1,7 @@
 layout: [post]
 title: Flexbox 布局  (一) Container
 date: 2016-01-22 14:20:48
+id: "Flexbox1"
 tags:
 - 前端
 - 翻译
@@ -48,7 +49,7 @@ flex 布局背后主要想法是能让 Container 可以更改他的 “Item” �
 
 如果传统布局是基于块和内联流方向的，那么 flex 布局则是基于 “flex-flow 方向”。请看下图，图中指明了规范，解释了 flex 布局背后的思想。
 
-![](/images/2016/01/flexbox.png)
+![](./flexbox.png)
 
 > Basically, items will be laid out following either the main axis (from main-start to main-end) or the cross axis (from cross-start to cross-end).
 
@@ -70,7 +71,7 @@ flex 布局背后主要想法是能让 Container 可以更改他的 “Item” �
 
 # Properties for the Parent (flex container)
 
-![](/images/2016/01/flex-container.svg)
+![](./flex-container.svg)
 
 ```css
 
@@ -94,7 +95,7 @@ flex 布局背后主要想法是能让 Container 可以更改他的 “Item” �
 
 ## flex-direction
 
-![](/images/2016/01/flex-direction1.svg)
+![](./flex-direction1.svg)
 
 > This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns.
 
@@ -118,7 +119,7 @@ flex 布局背后主要想法是能让 Container 可以更改他的 “Item” �
 
 ## flex-wrap
 
-![](/images/2016/01/flex-wrap.svg)
+![](./flex-wrap.svg)
 
 ```css
 .container{
@@ -152,7 +153,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ## justify-content
 
-![](/images/2016/01/justify-content.svg)
+![](./justify-content.svg)
 
 > This defines the alignment along the main axis. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
 
@@ -179,7 +180,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ## align-items
 
-![](/images/2016/01/align-items.svg)
+![](./align-items.svg)
 
 > This defines the default behaviour for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).
 
@@ -205,7 +206,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ## align-content
 
-![](/images/2016/01/align-content.svg)
+![](./align-content.svg)
 
 > This aligns a flex container's lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.
 
