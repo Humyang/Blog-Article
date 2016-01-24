@@ -9,7 +9,7 @@ categories:
 - 布局
 ---
 
-介绍 Flexbox 的概念，和 Container 能应用哪些属性。 
+介绍 Flexbox 的概念，和 Container 能应用哪些属性。
 
 <!-- more -->
 
@@ -137,3 +137,100 @@ flex 布局背后主要想法是能让 Container 可以更改他的 “Item” �
 - nowrap  (默认)：单行 / 左到右  (ltr)；右到左 (rtl)
 - wrap：多行 / 左到右  (ltr)；右到左  (rtl)
 - wrap-reverse：多行 / 右到左  (ltr)；左到右  (rtl)       
+
+## flex-flow (Applies to: parent flex container element)
+
+> This is a shorthand flex-direction and flex-wrap properties, which together define the flex container's main and cross axes. Default is row nowrap.
+
+flex-direction 和 flex-wrap 属性的缩写，集合定义 flex Container 的 main 和 cross 轴。默认值是 row nowrap。
+
+```css
+
+flex-flow: <‘flex-direction’> || <‘flex-wrap’>
+
+```
+
+## justify-content
+
+![](/images/2016/01/justify-content.svg)
+
+> This defines the alignment along the main axis. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
+
+定义 main 轴的 Item 的对齐方式。这个属性帮助分配额外的自由空间，当线上的 flex Item 不够灵活或虽然灵活但达到最大尺寸。并且当 Item 超出了线的范围他也可以帮忙控制对齐。
+
+```css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+```
+
+> - flex-start (default): items are packed toward the start line
+> - flex-end: items are packed toward to end line
+> - center: items are centered along the line
+> - space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line
+> - space-around: items are evenly distributed in the line with equal space around them. Note that visually the spaces aren't equal, since all the items have equal space on both sides. The first item will have one unit of space against the container edge, but two units of space between the next item because that next item has its own spacing that applies.
+
+- flex-start  (默认)： Item 从 start line 起包装
+- flex-end： Item 从 end line 起包装
+- center： Item 从 line 中心开始
+- space-between： Item 尽可能占满 line，第一个 Item 在 start line ，最后一个 Item 在 end line
+- space-around： Item 尽可能占满 line 并且彼此之间的距离相同。注意看起来是不相同的，因为所有的 Item 都有相同的空间在两侧，但第一个 Item 相对于 Container 只有一个单位的空间，但距离下一个 Item 有两个单位的空间因为下一个 Item 也有自己的单位空间。
+
+
+## align-items
+
+![](/images/2016/01/align-items.svg)
+
+> This defines the default behaviour for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).
+
+定义 flex Item 在当前 line 如何沿着 cross aix 布局的默认行为。可以认为他是 justify-content 的 cross-axis 版本  (垂直于 main-axis)。
+
+```css
+.container {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+```
+
+> - flex-start: cross-start margin edge of the items is placed on the cross-start line
+> - flex-end: cross-end margin edge of the items is placed on the cross-end line
+> - center: items are centered in the cross-axis
+> - baseline: items are aligned such as their baselines align
+> - stretch (default): stretch to fill the container (still respect min-width/max-width)
+
+- flex-start： Item 的 cross-start 外边距边缘放置 cross-start line
+- flex-end：item 的 cross-end 外边距放置到 cross-end line
+- center： Item 在 cross-axis 的中心
+- baseline：对齐 items ，例如根据他们的 baseline 对齐
+- stretch (默认) ：拉伸填充 Container   (仍遵循 min-width/max-width)
+
+## align-content
+
+![](/images/2016/01/align-content.svg)
+
+> This aligns a flex container's lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.
+
+这个属性用作当 cross-axis 有额外的空间时对齐 Container 的 line，类似 justify-content 对齐 main-axis 中的单个 item。
+
+> Note: this property has no effect when there is only one line of flex items.
+
+注意：当只有一条 flex Item 的 line 时这个属性不起作用。
+
+```css
+.container {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+```
+
+> - flex-start: lines packed to the start of the container
+> - flex-end: lines packed to the end of the container
+> - center: lines packed to the center of the container
+> - space-between: lines evenly distributed; the first line is at the start of the container while the last one is at the end
+> - space-around: lines evenly distributed with equal space around each line
+> - stretch (default): lines stretch to take up the remaining space
+
+- flex-start： line 从 Container 的起始位置包装
+- flex-end：line 从 Container 的结束位置包装
+- center：line 在 Container 的中间包装
+- space-between：line 尽可能分散；第一个 line 在 Container 的开始位置最后一个 line 在 Container 的结束位置
+- space-around：line 尽可能分散并且彼此之间的空白空间相同
+- stretch  (默认)：line 拉伸占据满剩余空间
