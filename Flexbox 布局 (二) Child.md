@@ -1,7 +1,6 @@
 layout: [post]
 title: Flexbox 布局  (二) Container
 date: 2016-01-24 18:23:48
-id: "Flexbox2"
 tags:
 - 前端
 - 翻译
