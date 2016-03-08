@@ -1,19 +1,28 @@
+layout: [post]
+title: 文章标题
+date: 2016-03-08 23:43:21
+tags:
+- 前端
+categories:
+- 前端
+- Canvas
+---
 
-这几天的时间的花在 Canvas 上了，目标是模仿 Nike 定制跑鞋的页面。
+Canvas
 
-勉强完成了基本功能 (鼠标移动到鞋子不同部位时高亮显示) ，但达不到想要的效果 (可以更改选中部位的颜色)。
+<!-- more -->
 
-虽然心中有了解决方案，但工作量太大，所以先把这部分放下，写下这篇文章，等日后需要深入学习 Canvas 时，再当作自己的入门文章重新学习。
+
+---
+
 
 
 ## Canvas 是什么
 
-Canvas 是 HTML 5 的一个标签，他起到画布的功能，例如任意图形，显示图片，显示文字等。
-
-虽然 Canvas 只是 HTML5 的一个标签，但却是需要大量时间才能掌握的标签 (如果只有简单的图形需求很轻松就可以使用) ，他是一条完整的新的技能树。
+Canvas 是 HTML 5 的一个标签，在浏览器开辟一个区域作为画布，可以显示任意图形，图片，文字等。
 
 
-这里收集了一些关于 Canvas 的站点：
+这里收集了一些有关 Canvas 的站点：
 
 - API https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData
 - 两个 Canvas 合成的 DEMO http://media.chikuyonok.ru/canvas-blending/
