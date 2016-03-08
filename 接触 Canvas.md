@@ -1,5 +1,5 @@
 layout: [post]
-title: 文章标题
+title: Canvas API
 date: 2016-03-08 23:43:21
 tags:
 - 前端
