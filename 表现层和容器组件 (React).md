@@ -1,3 +1,22 @@
+layout: [post]
+title: 表现层组件和容器组件
+date: 2016-03-18 00:11:37
+tags:
+- 前端
+categories:
+- React
+- Redux
+---
+
+[Redux 文档](http://redux.js.org/docs/basics/UsageWithReact.html)内推荐阅读的前置知识。
+
+<!-- more -->
+
+
+---
+
+[原文](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+
 # Presentational and Container Components
 
 表现层组件和容器组件
@@ -8,7 +27,7 @@ There’s a simple pattern I find immensely useful when writing React applicatio
 
 You’ll find your components much easier to reuse and reason about if you divide them into two categories. I call them Container and Presentational components* but I also heard Fat and Skinny, Smart and Dumb, Stateful and Pure, Screens and Components, etc. These all are not exactly the same, but the core idea is similar.
 
-你的组件将会更易重用和合理如果你将他们分成两大类。我把他们称为`容器组件`和`表现层组件`，我也听说了  Fat and Skinny, Smart and Dumb, Stateful and Pure, Screens and Components, 等。他们都不完全一样，但核心的理念是一样的。
+如果将你的组件分成两大类会更易重用和合理。我把他们称为`容器组件`和`表现层组件`，我也听说了  Fat and Skinny, Smart and Dumb, Stateful and Pure, Screens and Components, 等。他们都不完全一样，但核心的理念是一样的。
 
 
 My **presentational** components:
@@ -53,7 +72,7 @@ I put them in different folders to make this distinction clear.
 - 提供数据和行为给表现层或其它容器组件。
 - 调用 Flux action 和提供这些作为回调给哑组件。
 - 通常是有状态的，因为他们通常被作为数据源。
-- 通常使用[高阶组件](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750)生成例如 React redux 的 connect()，Relay 的 createContainer(),或 Flux Utils 的 Container.create(),而不是直接手写。
+- 通常使用[高阶组件](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750)生成例如 React redux 的 connect()，Relay 的 createContainer(),或 Flux Utils 的 'Container.create()',而不是直接手写。
 - 例如：UserPage, FollowersSidebar, StoryContainer, FollowedUserList。
 
 我把他们放在不同的文件夹来进行区分清楚。
@@ -74,7 +93,7 @@ Take advantage of that.
 - 更好的分离关注点。这种方式写组件更能了解你的 app 和 UI。
 - 更好的复用。你可以使用相同的表现层组件在完全不同的 state 来源，并切把这些放到分离的容器组件使他们能在将来复用。
 - 表现层组件实质上是你的 app 的 “调色板”。你可以把他们放到单独的页面和让他们的设计者调整所有变化而无需接触 app 的逻辑。你可以在这个页面运行 screenshot regression tests 。
-- 强制你提取布局组件例如 Sidebar,Page,COntextMenu 和使用 this.props.children 替代几个组件重复相同的标记和布局。
+- 强制你提取布局组件例如 Sidebar,Page,ContextMenu 和使用 this.props.children 替代几个组件重复相同的标记和布局。
 
 记住，容器组件没有 DOM。他只需要提供组合不同 UI 所需要的边界。
 
@@ -84,11 +103,11 @@ Take advantage of that.
 
 ## When to Introduce Containers?
 
-开始介绍容器组件？
+何时使用容器？
 
 I suggest you to start building your app with just presentational components first. Eventually you’ll realize that you are passing too many props down the intermediate components. When you notice that some components don’t use the props they receive but merely forward them down and you have to rewire all those intermediate components any time the children need more data, it’s a good time to introduce some container components. This way you can get the data and the behavior props to the leaf components without burdening the unrelated components in the middle of the tree.
 
-我猜测你开始构建你的 app 时首先创建的是表现层组件。最后你会发现传递了太多 props 到中间组件。当你注意到一些组件不需要用到他们接收到的 props 但只是要转发他们下去并且你重写了所有这些中间组件他们的子组件需要的更多数据，那时介绍一些容器组件的好时间。通过这种方式你可以获取数据和行为 props 给叶组件而不需要麻烦树结构中间无关的组件。
+我猜测你开始构建你的 app 时首先创建的是表现层组件。最后你会发现传递了太多 props 到中间组件。当你注意到一些组件不需要用到他们接收到的 props 但只是要转发他们下去并且你重写了所有这些中间组件他们的子组件需要的更多数据，那是使用一些容器组件的好时间。通过这种方式你可以获取数据和行为 props 给叶组件而不需要麻烦树结构中间无关的组件。
 
 This is an ongoing process of refactoring so don’t try to get it right the first time. As you experiment with this pattern, you will develop an intuitive sense for when it’s time to extract some containers, just like you know when it’s time to extract a function. My free Redux Egghead series might help you with that too!
 
