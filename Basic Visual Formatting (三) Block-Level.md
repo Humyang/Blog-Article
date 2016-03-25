@@ -26,7 +26,7 @@ Basic Visual Formatting (三)
 
 块级元素的行为即可预测且令人诧异的，元素布局在水平和垂直轴线有不同处理方式。例如，要完全明白块级元素是如何处理的，你必须清晰了解几处边界和区域。他们在图 7-2 列出。
 
-![](/images/2016/01/7-2.png)
+![](./7-2.png)
 <small>图 7-2. 完整的盒模型</small>
 
 > In general, the width of an element is defined as the distance from the left inner edge to the right inner edge, and the height is the distance from the inner top to the inner bottom. Both of these properties can be applied to an element.
@@ -80,7 +80,7 @@ Basic Visual Formatting (三)
 
 如果 div 的宽度是 30em，使每个有 30em 宽的段落的内容宽度，内边距，外边距，边框相加。如图 7-3 中，围绕着段落的 “空白” 空间实际上是他们的外边距。如果 div 有内边距，这里将会有更多空白空间，先不在这里介绍，我会在后面讨论内边距时说明。
 
-![](/images/2016/01/7-3.png)
+![](./7-3.png)
 图 7-3. 元素盒子的宽度与他们的父元素一样宽。
 
 ### Horizontal properties
@@ -91,7 +91,7 @@ Basic Visual Formatting (三)
 
 水平格式化的 “七个属性”：左外边距，左边框，左内边距，宽度，右内边距，右边框，右外边距。这些属性，在图 7-4，他们是关于块级盒子水平布局的。
 
-![](/images/2016/01/7-4.png)
+![](./7-4.png)
 图 7-4. 水平格式化的 “七个属性”
 
 > The values of these seven properties must add up to the width of the element’s containing block, which is usually the value of width for a block element’s parent (since block-level elements nearly always have block-level elements for parents).
@@ -102,7 +102,7 @@ Basic Visual Formatting (三)
 
 这七个属性，只有三个能设为 auto：元素的内容的宽度和左右外边距。剩余的属性必须设置为指定值或默认的宽度 0。图 7-5 显示演示盒子的部分哪些可以设置为 auto 哪些不能。
 
-![](/images/2016/01/7-5.png)
+![](./7-5.png)
 图 7-5. 可以设置为 auto 的水平属性
 
 > width must either be set to auto or a nonnegative value of some type. When you do use auto in horizontal formatting, different effects can result.
@@ -137,7 +137,7 @@ p {margin-left: auto; margin-right: 100px;
        width: 100px;}   /* right margin forced to be 200px */
 ```
 
-![](/images/2016/01/7-6.png)
+![](./7-6.png)
 图 7-6. 覆盖右外边距的设置
 
 > <small>margin-right is forced to be auto only for left-to-right languages such as English. In right-to-left languages, everything is reversed, so margin-left is forced to be auto, not margin-right.</small>
@@ -152,7 +152,7 @@ p {margin-left: auto; margin-right: 100px;
      p {margin-left: 100px; margin-right: 100px; width: auto;}
 ```
 
-![](/images/2016/01/7-7.png)
+![](./7-7.png)
 图 7-7. 自动宽度
 
 > The case shown in Figure 7-7 is the most common since it is equivalent to setting the margins and not declaring anything for the width. The result of the following markup is exactly the same as that shown in Figure 7-7:
