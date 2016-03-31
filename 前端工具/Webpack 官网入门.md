@@ -1,9 +1,9 @@
 layout: [post]
 title: Webpack 入门
 date: 2016-01-03 22:32:03
-tags: 
+tags:
 - 前端
-categories: 
+categories:
 - 前端
 - 工具
 ---
@@ -34,13 +34,13 @@ Webpack 官网入门
 
 这里有几种标准，定义模块之间如何依赖和导出值：
 
-* `<script>` 标签 (无 module system)
+* `script` 标签 (无 module system)
 * CommonJS
 * AMD 和它的一些方言
 * ES6 modules
 * 更多
 
-### `<script>` 标签
+### `script` 标签
 
 如果你不使用 module system 那么你会使用这种方式模块化处理你的代码库。
 
@@ -529,7 +529,7 @@ webpack 命令将会尝试在当前目录寻找 `webpack.config.js`。
 
 一些项目编译的输出内容可能很久，因此我们想显示一些进度条，和一些颜色。。
 
-我么可以这样做 
+我么可以这样做
 
 ```javascript
 
