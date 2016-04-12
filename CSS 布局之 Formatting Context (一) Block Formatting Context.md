@@ -1,13 +1,29 @@
+layout: [post]
+title: CSS 布局之 Formatting Context (一) Block Formatting Context
+date: 2016-01-15 14:59:43
+tags:
+- 前端
+categories:
+- CSS
+- 布局
+---
+
+介绍 CSS 布局的一个重要概念，Formatting Context，它是布局的基础。
+
+<!-- more -->
+
+
+---
+
 # CSS 布局之 Formatting Context (一) Block Formatting Context
 
 首先来了解什么是 Formatting Context。
 
-
 Formatting Context 是页面中的一块渲染区域，在这个区域内拥有它自己的渲染规则，决定了子元素如何定位，及元素之间如何相互作用。
 
-不同的 Formatting Context 有不同的渲染规则，常见的有 `BFC` (Block Formatting Contextext)，`IFC` (Inline Formatting Context)，和 CSS 3 新增加的 `GFC` (Grid Formatting Context)，`FFC` (Flex Formatting Context)。 
+不同的 Formatting Context 有不同的渲染规则，常见的有 `BFC` (Block Formatting Contextext)，`IFC` (Inline Formatting Context)，和 CSS 3 新增加的 `GFC` (Grid Formatting Context)，`FFC` (Flex Formatting Context)。
 
-与 Formatting Context 息息相关的是 Box，每个 HTML 元素作为 Box 通过 CSS 渲染，不同的类型的 Box 有不同的行为，CSS 中有两种 Box：Block 和 Inline，[这里有介绍]()。
+与 Formatting Context 息息相关的是 Box，每个 HTML 元素作为 Box 被 CSS 渲染。不同的类型的 Box 有不同的行为，CSS 中有两种 Box：Block 和 Inline。
 
 ## BFC
 
@@ -42,23 +58,26 @@ Block Formatting Context 包含创建它的元素的所有内部元素，但不�
 
 ### BFC 的规则
 
-Block Formatting Context 对于 positioning (见 [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float)) 和 clear (见 [clear](https://developer.mozilla.org/en-US/docs/Web/CSS/clear)) 非常重要，这些规则只会在同一个 Block Formatting 中应用。
+Block Formatting Context 对于如何定位 (见 [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float)) 和 clear (见 [clear](https://developer.mozilla.org/en-US/docs/Web/CSS/clear)) 非常重要，这些规则只会在同一个 Block Formatting 中应用。
 
 Floats 不会影响其它 block formatting context 的布局，clear 也只会清除同一个 block formatting context 的 float。
 
 
 这里是其它博客看到的一个总结：
 
-* 内部的Box会在垂直方向，一个接一个地放置。
-* Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
-* 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
-* BFC的区域不会与float box重叠。
+* 内部的 Box 以垂直方向，一个接一个地放置。
+* Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。
+* 每个元素的 margin box 的左边， 与容器块的 border box 的左边相接触(对于从左往右的文字格式  (西方语言)  ，否则相反)。即使存在浮动也是如此。
+* BFC的区域不会与 float box 重叠。
 * BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
 * 计算BFC的高度时，浮动元素也参与计算
 
+### 其它 FC
+
+参考在后面的 CSS 权威指南翻译文章。
 
 ## 参考资料
 
-https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Visual_formatting_model#Block-level_elements_and_block_boxes
+https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Visual_formatting_model
 
 http://www.cnblogs.com/liugblog/p/4982684.html

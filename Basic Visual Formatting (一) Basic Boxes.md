@@ -1,3 +1,21 @@
+layout: [post]
+title: Base Visual Formatting  (一)  Basic Boxes
+date: 2016-01-16 15:12:52
+tags:
+- 前端
+- 翻译
+categories:
+- CSS
+- 布局
+---
+
+介绍 CSS 布局的基础概念：Basic Boxes。
+
+<!-- more -->
+
+
+---
+
 来自 CSS The Definitive Guide Eric A Meyer。
 
 # Base Visual Formatting

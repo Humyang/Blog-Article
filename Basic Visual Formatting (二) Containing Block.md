@@ -1,3 +1,20 @@
+layout: [post]
+title: Base Visual Formatting  (二)  Containing Block and Quick Refresher
+date: 2016-01-16 15:12:52
+tags:
+- 前端
+- 翻译
+categories:
+- CSS
+- 布局
+---
+
+介绍 CSS 布局的基础概念：Containing Block，和一些专业术语的解释。
+
+<!-- more -->
+
+---
+
 # Basic Visual Formatting
 
 ## The Containing Block
