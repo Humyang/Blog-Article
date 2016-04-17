@@ -1,13 +1,33 @@
+layout: [post]
+title: Redux (二) 快速使用
+date: 2016-04-17 01:02:08
+tags:
+- 标签
+categories:
+- 分类
+- 子分类
+---
+
+介绍如何快速上手 Redux。
+
+<!-- more -->
+
+
+---
+
 # Redux 快速使用
 
+上一篇文章用简单的文字介绍了 Action,Reducer，Store。
+
+现在配合代码详细介绍。
 
 ## Action
 
-Action 是原生的 JavaScript 对象，内部必须包含一个 type 属性，表明这个 Action 执行什么操作。
+Action 是原生的 JavaScript Object 类型，内部必须包含一个 type 属性，表明这个 Action 执行什么操作。
 
 ```javascript
-// action.js
 
+// action.js
 export const ADD_MSG = 'ADD_MSG';
 
 // action creators
@@ -21,41 +41,49 @@ export function addMsg(text,index){
 
 ```
 
+这里使用函数 `addMsg` 生成一个 Action，这样做的好处是可以动态修改 Action 的值。
+
+这个 Action 中有一个固定的属性 `type`，表明需要添加消息。
+
+剩下的属性可以自由定义，Reducer 会根据这些信息执行操作。
+
+ `text,index` 是 ES 6 的写法，等同于` {text:text,index:index}`。
+
 ## Reducer
 
-Reducer 是一个纯函数 (`(state, Action) => state`)，描述了如何通过  Action 将当前 State 转换到下一个 State。
+Reducer 是纯函数，如  `(state, Action) => state`，通过  Action 将当前 State 转为下一个 State。
 
-一个应用程序只有一个 Reducer，对应唯一的 Store。
+一个应用程序只有一个根 Reducer。
 
-这个 Reducer 执行完成后返回下一个 State，绝不允许直接改变当前 State。
+Reducer 执行完成后返回下一个 State，绝不允许直接改变当前 State。
 
 大型程序的不同模块想让不同函数 (Reducer) 处理，只能通过属性分隔。
 
-例如下面的 State 由内容模块和历史纪录模块组成，分别由 'inputBoard' 和 'history' 函数生成。
+使用 'createStore' 创建一个与 reducer 绑定的 Store，每次调用 Dispatch(Action)  都传递参数给 Reducer 并执行。
 
-使用 'createStore' 创建一个与 reducer 绑定的 Store，这样每次调用 Dispatch(Action)  都会触发 Reducer。
+Reducer 第一个参数是当前应用程序的 State，第二个参数是 Action 对象。
 
-Reducer 第一个参数是当前应用程序的 State，第二个参数是 Action 对象，根据 Action 的 type 属性和其它属性，生成下一个 State。
+下面的 State 由内容模块和历史纪录模块组成，分别由 'content' 和 'history' 函数生成。
 
 ```javascript
 
 // reducer/index.js
-import inputBoard from './inputBoard';
+import content from './content';
 import history from './history';
 
 export default function todoApp(state = 'INIT', action) {
     return {
-        content: inputBoard(state.content, action),
+        content: content(state.content, action),
         history:history(state,action)
     }
 }
 
-// reducer/inputBoard.js
+// reducer/content.js
 import {
     ADD_MSG,MOVE_TO_HISTORY
 } from '../action';
 
-export default function inputBoard(state = [], action) {
+export default function content(state = [], action) {
     switch (action.type) {
         case ADD_MSG:
             return [
@@ -82,7 +110,7 @@ const store = createStore(rootReducer,initialState);
 
 ```
 
-Reducer 如果不执行默认必须返回当前 State。
+Reducer 如果不执行必须返回当前 State。
 
 ```javascript
 import {
@@ -215,13 +243,13 @@ Redux 程序遵循严格的单向数据流。
 
 Redux 中数据的生命周期有四步:
 
-1. 由你调用 `store.dispatch(action)`。
+1. 调用 `store.dispatch(action)`。
 
 你可以在应用程序的任意位置调用 `dispatch`，包括组件内和 XHR 回调方法，甚至在定时器内。
 
-2. Redux Store 调用你给定的 Reducer 方法。
+2. Redux Store 调用你传入 Reducer 方法。
 
-Store 会传递两个参数给 Reducer:当前 State 树和 Action。
+Store 会传递两个参数给 Reducer:当前 State 和 Action。
 
 注意 Reducer 是纯函数，他只用来计算下一个 State，他应该是完全可预测的，输入过的内容要在任意时候都能确保相同。他不应该执行任何有副作用的 API 例如 Router 转换，这些应该发生于 Action 被 Dispatch 之前。
 
@@ -231,7 +259,7 @@ Store 会传递两个参数给 Reducer:当前 State 树和 Action。
 
 当你触发 Action 时，由 `combineReducers()` 返回的 Reducer 将会调用所有已组合的 Reducer，这些 Reducer 返回的结果会组合成一个单独的 State 树。
 
-4. Redux Store 存储由根 Reducer 返回的新的 State。
+4. Redux Store 更新由根 Reducer 返回的新的 State。
 
 现在新的树是应用程序的下一个 State！每个 `store.subscribe(listener)` 返回的监听器都会被调用；在监听器内能调用 store.getState() 获取当前 State。
 
@@ -242,4 +270,4 @@ Store 会传递两个参数给 Reducer:当前 State 树和 Action。
 
 现在你已经了解 Redux 的基础用法了，接下来我们准备配合 React 使用。
 
-更高级的使用者：如果你已经熟悉基础概念并完成了这个指南，不要忘记在[高级指南](http://redux.js.org/docs/advanced/index.html)还有 [async flow](http://redux.js.org/docs/advanced/AsyncFlow.html) 等着你学习中间件在 [async action](http://redux.js.org/docs/advanced/AsyncActions.html) 到达 reducer 之前是如何转换的。
+> 更高级的使用者：如果你已经熟悉基础概念并完成了这个指南，不要忘记去[高级指南](http://redux.js.org/docs/advanced/index.html) 的 [async flow](http://redux.js.org/docs/advanced/AsyncFlow.html) 学习当中间件在 [async action](http://redux.js.org/docs/advanced/AsyncActions.html) 到达 reducer 之前是如何转换的。
