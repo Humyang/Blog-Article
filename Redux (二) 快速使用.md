@@ -2,10 +2,10 @@ layout: [post]
 title: Redux (二) 快速使用
 date: 2016-04-17 01:02:08
 tags:
-- 标签
+- 前端
 categories:
-- 分类
-- 子分类
+- 前端
+- Redux
 ---
 
 介绍如何快速上手 Redux。
