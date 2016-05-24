@@ -1,5 +1,5 @@
 layout: [post]
-title: Basic Visual Formatting (三)
+title: Basic Visual Formatting (三) Block-Level Elements
 date: 2016-01-22 14:24:26
 tags:
 - 前端
@@ -24,7 +24,7 @@ Basic Visual Formatting (三)
 
 > Block-level elements can behave in both predictable and surprising ways. The handling of element placement along the horizontal and vertical axes can differ, for example. To fully understand how block-level elements are handled, you must clearly understand a number of boundaries and areas. They are shown in detail in Figure 7-2.
 
-块级元素的行为即可预测且令人诧异的，元素布局在水平和垂直轴线有不同处理方式。例如，要完全明白块级元素是如何处理的，你必须清晰了解几处边界和区域。他们在图 7-2 列出。
+块级元素的行为即可预测又令人诧异，元素布局在水平和垂直轴线有不同处理方式。例如，要完全明白块级元素是如何处理的，你必须清晰了解几处边界和区域。他们在图 7-2 列出。
 
 ![](./7-2.png)
 <small>图 7-2. 完整的盒模型</small>
