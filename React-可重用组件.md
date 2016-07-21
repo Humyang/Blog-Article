@@ -1,9 +1,9 @@
 layout: [post]
-title: "React 重用组件"
+title: "React-可重用组件"
 date: 2015-11-29 23:18:56
-tags: 
+tags:
 - 前端
-categories: 
+categories:
 - 前端
 - React
 id: "reusable-components"
@@ -282,32 +282,3 @@ ReactDOM.render(<HelloMessage name="Sebastian" />, mountNode);
 > 注意：因为无状态方法没有返回实例，你不能捆绑 ref 到无状态组件。通常这不是问题，因为无状态方法不能提供 imperative API。没有 imperative API，就没有太多实例可以做的事情。无论如何，如果用户想在无状态组件寻找 DOM 节点，它们必须把组件让有状态组件 (如 ES6 class 组件) 包裹和捆绑它们的 ref 到包裹着它的有状态组件。
 
 理想在状态下，大部分组件都是有状态方法因为有状态组件可以跟随 React 核心的快速的代码，这是推荐的模式。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
