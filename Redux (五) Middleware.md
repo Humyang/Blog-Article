@@ -1,6 +1,6 @@
 layout: [post]
 title: Redux (五) Middleware
-date: 2016-06-12 01:30:45
+date: 2016-07-22 17:48:50
 tags:
 - 前端
 categories:
@@ -9,14 +9,15 @@ categories:
 
 ---
 
-文章简介
+介绍 Redux middleware 的原理
 
 <!-- more -->
 
 
 ---
 
-http://redux.js.org/docs/advanced/Middleware.html
+[原文地址](http://redux.js.org/docs/advanced/Middleware.html)
+
 
 # Middleware
 
