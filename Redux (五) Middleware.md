@@ -1,5 +1,5 @@
 layout: [post]
-title: Redux (六) Middleware
+title: Redux (五) Middleware
 date: 2016-06-12 01:30:45
 tags:
 - 前端
@@ -340,7 +340,7 @@ store.dispatch(addTodo('Use Redux'))
 
 ## redux-thunk 的总结
 
-redux-thunk 
+redux-thunk
 
 Any return value from the inner function will be available as the return value of dispatch itself.
 
