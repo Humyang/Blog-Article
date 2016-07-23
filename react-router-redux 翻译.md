@@ -10,7 +10,7 @@ categories:
 - react
 ---
 
-文章简介
+翻译 react-router-redux 的 readme。
 
 <!-- more -->
 
